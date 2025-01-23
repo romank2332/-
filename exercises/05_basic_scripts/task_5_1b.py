@@ -50,3 +50,10 @@ london_co = {
         "routing": True,
     },
 }
+print('название')
+n = input()
+nk = list(london_co[n].keys())
+print ('параметры', nk)
+p = input()
+print(london_co[n][p])
+
