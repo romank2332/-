@@ -49,3 +49,11 @@ london_co = {
         "routing": True,
     },
 }
+print('введите название', list(london_co))
+n = input()
+london_co.get(n,('такого названия нет'))
+print('введите параметр', list(london_co[n]))
+p = input()
+print(london_co[n].get(p,('такого параметра нет')))
+
+
