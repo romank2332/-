@@ -52,8 +52,7 @@ london_co = {
 }
 print('введите название')
 n = input()
-nk = list(london_co[n].keys())
-print ('введите параметр', nk)
+print ('введите параметр', list(london_co[n].keys()))
 p = input()
 print(london_co[n][p])
 
