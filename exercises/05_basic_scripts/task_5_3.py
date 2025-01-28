@@ -50,7 +50,7 @@ switchport mode trunk
 switchport trunk allowed vlan 2,3,4,5
 """
 
-access_template = [
+access = [
     "switchport mode access",
     "switchport access vlan {}",
     "switchport nonegotiate",
@@ -58,8 +58,17 @@ access_template = [
     "spanning-tree bpduguard enable",
 ]
 
-trunk_template = [
+trunk = [
     "switchport trunk encapsulation dot1q",
     "switchport mode trunk",
     "switchport trunk allowed vlan {}",
 ]
+
+
+vopros = {"access": "Введите номер VLAN: ", "trunk": "Введите разрешенные VLANы: "}
+rejim = input("Введите режим работы интерфейса (access/trunk): ")
+inter = input("Введите интерфейс: ")
+vlan = input(vopros[rejim])
+template = {"access": access, "trunk": trunk}
+print(f"interface {inter}")
+print("\n".join(template[rejim]).format(vlan))
