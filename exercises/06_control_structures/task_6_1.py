@@ -13,3 +13,8 @@ MAC-адреса используются в формате XXXX.XXXX.XXXX
 """
 
 mac = ["aabb:cc80:7000", "aabb:dd80:7340", "aabb:ee80:7000", "aabb:ff80:7000"]
+mac_point = []
+for m in mac:
+    mac_point.append(m.replace(':','.'))
+
+print(mac_point)
