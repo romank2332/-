@@ -82,3 +82,30 @@ trunk = {
 #         else:
 #             print(f" {command}")
 
+ip_adr = input("Enter ip address: ")
+chasti = ip_adr.split(".")
+correct_ip = True
+
+if len(chasti) != 4:
+    correct_ip = False
+else:
+    for octet in chasti:
+        if not (octet.isdigit() and int(octet) in range(256)):
+            correct_ip = False
+            break
+
+if not correct_ip:
+    print("Неправильный IP-адрес")
+else:
+    chasti_num = [int(i) for i in chasti]
+
+    if chasti_num[0] in range(1, 224):
+        print("unicast")
+    elif chasti_num[0] in range(224, 240):
+        print("multicast")
+    elif ip_adr == "255.255.255.255":
+        print("local broadcast")
+    elif ip_adr == "0.0.0.0":
+        print("unassigned")
+    else:
+        print("unused")
