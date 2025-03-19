@@ -12,3 +12,16 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+ip_adr =input("введите ip: ")
+chast1= int(ip_adr.split(".")[0])
+
+if ip_adr== "255.255.255.255":
+    print("local broadcast")
+elif ip_adr =="0.0.0.0":
+    print("unassigned")
+elif 1 <= chast1<= 223:
+    print("unicast")
+elif 224 <=chast1<=239:
+    print("multicast")
+else:
+    print("unused")
