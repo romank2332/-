@@ -17,7 +17,7 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
-ip_adr = input("Enter ip address: ")
+ip_adr = input("введите ip: ")
 chasti = ip_adr.split(".")
 correct_ip = True
 
