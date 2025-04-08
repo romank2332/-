@@ -21,7 +21,7 @@ polzovatel_vlan = input("Enter VLAN number: ")
 
 with open("CAM_table.txt", "r") as conf:
     for line in conf:
-        slova = line.split()
+        slova= line.split()
         if slova and slova[0].isdigit() and slova[0] == polzovatel_vlan:
             vlan, mac, _, intf = slova
             print(f"{vlan:9}{mac:20}{intf}")

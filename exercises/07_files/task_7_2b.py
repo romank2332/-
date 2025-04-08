@@ -25,7 +25,7 @@ a_file, b_file = argv[1], argv[2]
 
 with open(a_file) as a, open(b_file, 'w') as b:
     for line in a:
-        slova = line.split()
+        slova =line.split()
         slova_intersect = set(slova) & set(ignore)
         if not line.startswith("!") and not slova_intersect:
             b.write(line)
